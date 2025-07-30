@@ -66,7 +66,7 @@ This project predicts whether a person is at **risk of heart disease** using the
 **`0.873`** (87.3%)
 
 ###  Confusion Matrix:
-![Confusion Matrix](file-9rXyCVT5fEN8j3SKkvhWKL)
+![Confusion Matrix](confusion-matrix.png)
 
 - True Positives: 23  
 - True Negatives: 21  
