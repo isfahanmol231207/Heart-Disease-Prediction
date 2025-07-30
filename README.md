@@ -1,58 +1,97 @@
-# Heart Disease Prediction Using Machine Learning
+#  Heart Disease Prediction using Logistic Regression
 
-This project builds a classification model to predict whether an individual is at risk of **heart disease** using the **UCI Heart Disease dataset**. It focuses on data cleaning, exploratory data analysis, model training, and evaluation using appropriate metrics.
+This project predicts whether a person is at **risk of heart disease** using the UCI Heart Disease dataset. A **Logistic Regression** model is trained on patient health data, and its performance is evaluated using **accuracy**, **ROC AUC**, and **confusion matrix**. Feature importance is analyzed to understand medical predictors that influence the outcome.
 
 ---
 
 ##  Objective
 
-- Predict the risk of heart disease based on health-related attributes.
-- Use classification algorithms like **Logistic Regression** or **Decision Tree**.
-- Evaluate model performance using **accuracy**, **confusion matrix**, and **ROC-AUC**.
-- Identify the most important features that influence the prediction.
+- Predict the presence of heart disease (binary classification).
+- Analyze and prepare the UCI Heart Disease dataset.
+- Train a **Logistic Regression** classifier.
+- Evaluate using:
+  - Accuracy
+  - Confusion Matrix
+  - ROC Curve (AUC)
+- Identify key health factors influencing predictions.
 
 ---
 
 ##  Dataset
 
 **UCI Heart Disease Dataset**  
-Source: [Kaggle Dataset Link](https://www.kaggle.com/ronitf/heart-disease-uci)
+ Available on [Kaggle](https://www.kaggle.com/datasets/ronitf/heart-disease-uci)
 
-### Features Include:
-- Age
-- Sex
-- Chest Pain Type (cp)
-- Resting Blood Pressure (trestbps)
-- Cholesterol (chol)
-- Fasting Blood Sugar (fbs)
-- Max Heart Rate Achieved (thalach)
-- Exercise Induced Angina (exang)
-- Oldpeak (ST depression)
-- Slope, Ca, Thal, etc.
-- **Target**: 1 (disease), 0 (no disease)
+### Key Features:
+- `age`
+- `sex`
+- `cp` (chest pain type)
+- `thalach` (maximum heart rate)
+- `exang` (exercise-induced angina)
+- `oldpeak`, `slope`, `ca`, `thal`, etc.
+- `target` (0 = no disease, 1 = disease)
 
 ---
 
-##  Tasks Performed
+## ⚙ Tools & Libraries Used
 
-### 1️ Data Cleaning
-- Check for and handle missing/null values
-- Encode categorical variables (if any)
-- Normalize or scale features (if needed)
+- `pandas`, `numpy` – data manipulation
+- `seaborn`, `matplotlib` – visualizations
+- `sklearn` – machine learning modeling & evaluation
 
-### 2️ Exploratory Data Analysis (EDA)
-- Visualize distributions and correlations
-- Use heatmaps, bar charts, histograms, etc.
-- Analyze relationships between features and the target variable
+---
 
-### 3️ Model Training
-- Use **Logistic Regression** or **Decision Tree Classifier**
-- Split data into training and testing sets (e.g., 80-20)
+##  Steps Followed
 
-### 4 Evaluation Metrics
-- **Accuracy Score**
-- **Confusion Matrix**
-- **ROC Curve and AUC Score**
-- **Feature Importance** (especially for Decision Tree)
+###  Data Cleaning
+- Checked for null/missing values
+- Ensured proper data types
+- No major missing values found
+
+###  EDA (Exploratory Data Analysis)
+- Correlation heatmaps
+- Distribution plots
+- Class imbalance analysis
+
+###  Model Training
+- Model: `LogisticRegression()`
+- Data split: 80% training, 20% testing
+- Performance evaluated on test data
+
+---
+
+##  Results
+
+###  Accuracy Score:
+**`0.873`** (87.3%)
+
+###  Confusion Matrix:
+![Confusion Matrix](file-9rXyCVT5fEN8j3SKkvhWKL)
+
+- True Positives: 23  
+- True Negatives: 21  
+- False Positives: 9  
+- False Negatives: 7
+
+---
+
+###  ROC Curve:
+- **AUC Score: 0.841**
+
+---
+
+###  Feature Importance (Logistic Regression Coefficients)
+
+- Top contributing features:
+  - `cp` (chest pain type)
+  - `thal`
+  - `trestbps`
+  - `oldpeak`
+  - `sex`
+- Least influential:
+  - `thalach`, `age`
+
+---
+
 
 
